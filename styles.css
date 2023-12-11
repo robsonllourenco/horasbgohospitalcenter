@@ -1,0 +1,60 @@
+body {
+    font-family: Arial, sans-serif;
+    background-color: #6a0080; /* Cor de fundo em tom de roxo */
+    color: #fff; /* Cor do texto branco para melhor contraste */
+}
+
+form {
+    max-width: 600px;
+    margin: 20px auto; /* Aumentando a margem inferior para mover para baixo */
+    background-color: #8e44ad; /* Cor de fundo em tom de roxo mais escuro */
+    padding: 30px; /* Adiciona algum espaçamento interno */
+    border-radius: 8px; /* Borda arredondada */
+}
+
+h1 {
+    text-align: center;
+    font-size: 2em;
+    color: #fff; /* Cor do texto branco */
+    display: block;
+}
+
+h2 {
+    text-align: center;
+    font-size: 18px;
+    color: #280230; /* Cor do texto branco */
+    display: block;
+    margin: -10px auto;
+}
+
+label {
+    display: block;
+    margin-bottom: 10px;
+    color: #fff; /* Cor do texto branco */
+}
+
+input {
+    width: 580px;
+    padding: 8px;
+    margin-bottom: 15px;
+}
+
+button {
+    padding: 10px;
+    background-color: #602a75; /* Cor de botão em tom de roxo mais claro */
+    color: white;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+button:hover {
+    background-color: #000000; /* Altera a cor ao passar o mouse */
+}
+
+#result {
+    margin-top: 20px;
+    text-align: center;
+    font-size: 2em;
+    color: #fff; /* Cor do texto branco */
+}
