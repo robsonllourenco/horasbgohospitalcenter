@@ -59,7 +59,7 @@ function showResult(totalServiceHours) {
     var resultMessage = document.getElementById('resultMessage');
     var formattedDuration = formatDuration(totalServiceHours);
 
-    resultMessage.innerHTML = 'Seu total de horas de serviço:<br><br>' + formattedDuration;
+    resultMessage.innerHTML = 'Seu total de horas de serviço:<br>' + formattedDuration;
     resultContainer.style.display = 'block';
 }
 
@@ -69,7 +69,10 @@ function formatDuration(hours) {
     var minutesComponent = Math.floor((totalSeconds % 3600) / 60);
     var secondsComponent = Math.floor(totalSeconds % 60);
 
-    return hoursComponent + ' horas e ' + minutesComponent + ' minutos';
+    var hoursLabel = hoursComponent === 1 ? 'hora' : 'horas';
+    var minutesLabel = minutesComponent === 1 ? 'minuto' : 'minutos';
+
+    return hoursComponent + ' ' + hoursLabel + ' e ' + minutesComponent + ' ' + minutesLabel;
 }
 
 function hideResult() {
