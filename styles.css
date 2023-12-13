@@ -1,47 +1,49 @@
 body {
-    font-family: Arial, sans-serif;
-    background-color: #6a0080; /* Cor de fundo em tom de roxo */
-    color: #fff; /* Cor do texto branco para melhor contraste */
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background-color: #6a0080;
+    color: #333;
+    margin: 0;
+}
+
+.container {
+    max-width: 800px;
+    margin: 20px auto;
+    background-color: #ffffff;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    margin-bottom: -10px;
+}
+
+header {
+    text-align: center;
+    margin-bottom: 5px;
+}
+
+h1, h2 {
+    color: #6a0080;
+    margin-bottom: 0px;
 }
 
 form {
-    max-width: 600px;
-    margin: 20px auto; /* Aumentando a margem inferior para mover para baixo */
-    background-color: #8e44ad; /* Cor de fundo em tom de roxo mais escuro */
-    padding: 30px; /* Adiciona algum espaçamento interno */
-    border-radius: 8px; /* Borda arredondada */
-}
-
-h1 {
-    text-align: center;
-    font-size: 2em;
-    color: #fff; /* Cor do texto branco */
-    display: block;
-}
-
-h2 {
-    text-align: center;
-    font-size: 18px;
-    color: #280230; /* Cor do texto branco */
-    display: block;
-    margin: -10px auto;
+    display: flex;
+    flex-direction: column;
 }
 
 label {
-    display: block;
-    margin-bottom: 10px;
-    color: #fff; /* Cor do texto branco */
+    margin-bottom: 5px;
 }
 
 input {
-    width: 580px;
-    padding: 8px;
+    width: 100%;
+    padding: 10px;
     margin-bottom: 15px;
+    box-sizing: border-box;
 }
 
 button {
     padding: 10px;
-    background-color: #602a75; /* Cor de botão em tom de roxo mais claro */
+    background-color: #6a0080;
     color: white;
     border: none;
     border-radius: 5px;
@@ -49,31 +51,30 @@ button {
 }
 
 button:hover {
-    background-color: #000000; /* Altera a cor ao passar o mouse */
+    background-color: #8e44ad;
 }
 
 #result {
-    margin-top: 20px;
-    text-align: center;
-    font-size: 2em;
-    color: #fff; /* Cor do texto branco */
     position: fixed;
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
-    background-color: #602a75; /* Cor de fundo do resultado */
-    padding: 20px;
-    border-radius: 8px;
-    display: none; /* Para esconder inicialmente */
-    box-shadow: 0 0 20px rgb(0, 0, 0); /* Adiciona sombra uniforme */
+    background-color: #6a0080;
+    padding: 30px;
+    border-radius: 10px;
+    display: none;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.2);
 }
 
-
+#result p {
+    font-size: 1.5em;
+    color: #fff;
+    margin-bottom: 20px;
+}
 
 #result button {
-    margin-top: 10px; /* Espaço entre a mensagem e o botão "Fechar" */
-    padding: 10px;
-    background-color: #17101a; /* Cor de botão em tom de roxo mais claro */
+    padding: 12px;
+    background-color: #8e44ad;
     color: white;
     border: none;
     border-radius: 5px;
@@ -81,6 +82,5 @@ button:hover {
 }
 
 #result button:hover {
-    background-color: #970090f3; /* Altera a cor ao passar o mouse */
+    background-color: #6a0080;
 }
-
