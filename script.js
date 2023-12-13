@@ -1,45 +1,78 @@
-<!DOCTYPE html>
-<html lang="en">
-    <link rel="icon" href="favicon.png" type="image/x-icon">
+var breakCount = 1;
 
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>BGO Hospital Center</title>
-    <link rel="stylesheet" href="styles.css">
-</head>
-<body>
+function addBreak() {
+    breakCount++;
 
-<h1>Calculadora de Horas de Serviço<br>do BGO Hospital Center</h1>
-<h2>Desenvolvido pelo MINISTRO [273]</h2>
+    var breaksContainer = document.getElementById('breaksContainer');
 
-    <form id="serviceForm">
-        <label for="startTime">Início de Serviço:</label>
-        <input type="time" id="startTime" required>
+    var breakDiv = document.createElement('div');
+    breakDiv.classList.add('break');
 
-        <div id="breaksContainer">
-            <div class="break">
-                <label for="breakStart1">Pausa:</label>
-                <input type="time" class="break-start" id="breakStart1" required>
-                <label for="breakEnd1">Retorno da pausa:</label>
-                <input type="time" class="break-end" id="breakEnd1" required>
-            </div>
-        </div>
+    breakDiv.innerHTML = `
+        <label for="breakStart${breakCount}">Pausa ${breakCount}:</label>
+        <input type="time" class="break-start" id="breakStart${breakCount}" required>
+        <label for="breakEnd${breakCount}">Retorno da pausa ${breakCount}:</label>
+        <input type="time" class="break-end" id="breakEnd${breakCount}" required>
+    `;
 
-        <button type="button" onclick="addBreak()">Adicionar mais pausa</button>
-<br>
-<br>
-        <label for="endTime">Fim de Serviço:</label>
-        <input type="time" id="endTime" required>
+    breaksContainer.appendChild(breakDiv);
+}
 
-        <button type="button" onclick="calculateServiceHours()">Calcular Horas</button>
-    </form>
+function calculateServiceHours() {
+    var startTime = document.getElementById('startTime').value;
+    var endTime = document.getElementById('endTime').value;
 
-    <div id="result">
-        <p id="resultMessage"></p>
-        <button onclick="hideResult()">Fechar</button>
-    </div>
+    var breaks = document.querySelectorAll('.break');
+    var totalBreakDuration = 0;
 
-    <script src="script.js"></script>
-</body>
-</html>
+    breaks.forEach(function (breakDiv) {
+        var breakStart = breakDiv.querySelector('.break-start').value;
+        var breakEnd = breakDiv.querySelector('.break-end').value;
+
+        if (breakStart && breakEnd) {
+            var breakDuration = calculateTimeDifference(breakStart, breakEnd);
+            totalBreakDuration += breakDuration;
+        }
+    });
+
+    var serviceDuration = calculateTimeDifference(startTime, endTime);
+    var totalServiceHours = serviceDuration - totalBreakDuration;
+
+    showResult(totalServiceHours);
+}
+
+function calculateTimeDifference(start, end) {
+    var startTime = new Date('1970-01-01T' + start + 'Z');
+    var endTime = new Date('1970-01-01T' + end + 'Z');
+
+    // Adiciona 24 horas ao endTime se for anterior ao startTime
+    if (endTime < startTime) {
+        endTime.setHours(endTime.getHours() + 24);
+    }
+
+    var timeDifference = endTime - startTime;
+    return timeDifference / (1000 * 60 * 60);
+}
+
+function showResult(totalServiceHours) {
+    var resultContainer = document.getElementById('result');
+    var resultMessage = document.getElementById('resultMessage');
+    var formattedDuration = formatDuration(totalServiceHours);
+
+    resultMessage.innerHTML = 'Seu total de horas de serviço:<br><br>' + formattedDuration;
+    resultContainer.style.display = 'block';
+}
+
+function formatDuration(hours) {
+    var totalSeconds = hours * 3600;
+    var hoursComponent = Math.floor(totalSeconds / 3600);
+    var minutesComponent = Math.floor((totalSeconds % 3600) / 60);
+    var secondsComponent = Math.floor(totalSeconds % 60);
+
+    return hoursComponent + ' horas e ' + minutesComponent + ' minutos';
+}
+
+function hideResult() {
+    var resultContainer = document.getElementById('result');
+    resultContainer.style.display = 'none';
+}
