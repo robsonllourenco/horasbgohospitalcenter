@@ -38,7 +38,7 @@ function calculateServiceHours() {
     var serviceDuration = calculateTimeDifference(startTime, endTime);
     var totalServiceHours = serviceDuration - totalBreakDuration;
 
-    displayResult(totalServiceHours);
+    showResult(totalServiceHours);
 }
 
 function calculateTimeDifference(start, end) {
@@ -49,11 +49,13 @@ function calculateTimeDifference(start, end) {
     return timeDifference / (1000 * 60 * 60);
 }
 
-function displayResult(totalServiceHours) {
+function showResult(totalServiceHours) {
     var resultContainer = document.getElementById('result');
+    var resultMessage = document.getElementById('resultMessage');
     var formattedDuration = formatDuration(totalServiceHours);
 
-    resultContainer.textContent = 'Seu total de horas de serviço: ' + formattedDuration;
+    resultMessage.innerHTML = 'Seu total de horas de serviço:<br><br>' + formattedDuration;
+    resultContainer.style.display = 'block';
 }
 
 function formatDuration(hours) {
@@ -63,4 +65,9 @@ function formatDuration(hours) {
     var secondsComponent = Math.floor(totalSeconds % 60);
 
     return hoursComponent + ' horas e ' + minutesComponent + ' minutos';
+}
+
+function hideResult() {
+    var resultContainer = document.getElementById('result');
+    resultContainer.style.display = 'none';
 }
