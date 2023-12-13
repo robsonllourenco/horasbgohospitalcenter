@@ -44,7 +44,7 @@ button {
     background-color: #602a75; /* Cor de botão em tom de roxo mais claro */
     color: white;
     border: none;
-    border-radius: 4px;
+    border-radius: 5px;
     cursor: pointer;
 }
 
@@ -57,4 +57,30 @@ button:hover {
     text-align: center;
     font-size: 2em;
     color: #fff; /* Cor do texto branco */
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: #602a75; /* Cor de fundo do resultado */
+    padding: 20px;
+    border-radius: 8px;
+    display: none; /* Para esconder inicialmente */
+    box-shadow: 0 0 20px rgb(0, 0, 0); /* Adiciona sombra uniforme */
 }
+
+
+
+#result button {
+    margin-top: 10px; /* Espaço entre a mensagem e o botão "Fechar" */
+    padding: 10px;
+    background-color: #17101a; /* Cor de botão em tom de roxo mais claro */
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+#result button:hover {
+    background-color: #970090f3; /* Altera a cor ao passar o mouse */
+}
+
