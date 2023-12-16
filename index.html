@@ -11,14 +11,16 @@
 
 <div class="container">
     <header>
-        <h1>Calculadora de Horas de Serviço <br>BGO Hospital Center</h1>
+        <h1>Calculadora de Horas<br>BGO Hospital Center</h1>
         <p>Desenvolvido pelo MINISTRO [273]</p>
     </header>
 
     <main>
         <form id="serviceForm">
-            <label for="startTime">Início de Serviço:</label>
-            <input type="time" id="startTime" required>
+            <div class="form-group">
+                <label for="startTime">Início de Serviço:</label>
+                <input type="time" id="startTime" required>
+            </div>
 
             <div id="breaksContainer">
                 <div class="break">
@@ -31,13 +33,15 @@
 
             <button type="button" onclick="addBreak()">Adicionar mais pausa</button>
             
-            <label for="endTime">Fim de Serviço:</label>
-            <input type="time" id="endTime" required>
+            <div class="form-group">
+                <label for="endTime">Fim de Serviço:</label>
+                <input type="time" id="endTime" required>
+            </div>
 
             <button type="button" onclick="calculateServiceHours()">Calcular Horas</button>
         </form>
 
-        <div id="result">
+        <div id="result" class="result-container">
             <p id="resultMessage"></p>
             <button onclick="hideResult()">Fechar</button>
         </div>
