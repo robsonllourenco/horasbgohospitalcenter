@@ -1,14 +1,14 @@
 body {
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-    background-color: #6a0080;
-    color: #333;
+    background: url('back.png') no-repeat center center fixed;
+    background-size: cover;
     margin: 0;
 }
 
 .container {
     max-width: 500px;
     margin: 20px auto;
-    background-color: #ffffff;
+    background-color: rgba(255, 255, 255, 0.9);
     padding: 20px;
     border-radius: 8px;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
@@ -60,7 +60,7 @@ button:hover {
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
-    background-color: #6a0080;
+    background-color: rgba(106, 0, 128, 0.9);
     padding: 30px;
     border-radius: 10px;
     display: none;
