@@ -60,7 +60,7 @@ button:hover {
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
-    background-color: rgba(106, 0, 128, 0.9);
+    background-color: rgb(107, 0, 128);
     padding: 30px;
     border-radius: 10px;
     display: none;
