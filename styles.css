@@ -6,7 +6,7 @@ body {
 }
 
 .container {
-    max-width: 800px;
+    max-width: 500px;
     margin: 20px auto;
     background-color: #ffffff;
     padding: 20px;
@@ -23,6 +23,7 @@ header {
 h1, h2 {
     color: #6a0080;
     margin-bottom: 0px;
+    font-size: 30px;
 }
 
 form {
