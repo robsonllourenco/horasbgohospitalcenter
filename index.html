@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>BGO Hospital Center - Calculadora de Horas</title>
+    <title>Calculadora de Horas - BGO Hospital Center</title>
     <link rel="stylesheet" href="styles.css">
     <link rel="icon" href="favicon.png" type="image/x-icon">
 </head>
@@ -11,14 +11,15 @@
 
 <div class="container">
     <header>
-        <h1>Calculadora de Horas<br>BGO Hospital Center</h1>
-        <p>Desenvolvido pelo MINISTRO [273]</p>
+        <h1>Calculadora de Horas</h1>
+        <p>BGO Hospital Center</p>
+        <h2>Desenvolvido pelo MINISTRO [273]</h2>
     </header>
 
     <main>
         <form id="serviceForm">
             <div class="form-group">
-                <label for="startTime">Início de Serviço:</label>
+                <label for="startTime">Início:</label>
                 <input type="time" id="startTime" required>
             </div>
 
@@ -26,19 +27,19 @@
                 <div class="break">
                     <label for="breakStart1">Pausa:</label>
                     <input type="time" class="break-start" id="breakStart1" required>
-                    <label for="breakEnd1">Retorno da pausa:</label>
+                    <label for="breakEnd1">Retorno:</label>
                     <input type="time" class="break-end" id="breakEnd1" required>
                 </div>
             </div>
 
-            <button type="button" onclick="addBreak()">Adicionar mais pausa</button>
+            <button type="button" onclick="addBreak()">+ Adicionar Pausa</button>
             
             <div class="form-group">
-                <label for="endTime">Fim de Serviço:</label>
+                <label for="endTime">Fim:</label>
                 <input type="time" id="endTime" required>
             </div>
 
-            <button type="button" onclick="calculateServiceHours()">Calcular Horas</button>
+            <button type="button" onclick="calculateServiceHours()">Calcular</button>
         </form>
 
         <div id="result" class="result-container">
